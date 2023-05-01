@@ -128,7 +128,7 @@ const Homepage = () => {
 
 const styles = StyleSheet.create({
   tasksWrapper: {
-    paddingTop: 80,
+    paddingTop: 30,
     paddingHorizontal: 20,
   },
   sectionTitle: {
@@ -140,17 +140,21 @@ const styles = StyleSheet.create({
   },
   writeTaskWrapper: {
     position: "absolute",
-    bottom: 20,
+    bottom: -600,
     width: "100%",
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",
   },
   inputContainer: {
+    position: "absolute",
+    bottom: 80,
+    left: 0,
+    right: 0,
     backgroundColor: "#fff",
     borderRadius: 20,
     flex: 1,
-    marginRight: 20,
+    margin: 20,
     paddingVertical: 10,
     paddingHorizontal: 20,
     flexDirection: "row",
@@ -201,6 +205,7 @@ const styles = StyleSheet.create({
   calendarWrapper: {
     position: "absolute",
     right: 20,
+    bottom: 200,
     backgroundColor: "#fff",
     borderRadius: 10,
     width: "90%",
@@ -210,6 +215,9 @@ const styles = StyleSheet.create({
   calendarTitle: {
     fontSize: 24,
     fontWeight: "bold",
+  },
+  calendar: {
+    width: 300,
   },
 
   calendarHeader: {
