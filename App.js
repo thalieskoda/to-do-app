@@ -16,7 +16,7 @@ const App = () => {
         <Stack.Screen
           name="TaskMate"
           component={Homepage}
-          options={{
+          options={({ navigation }) => ({
             headerStyle: { backgroundColor: "lightWhite" },
             headerShadowVisible: false,
             headerLeft: () => <Text style={styles.headerTitle}>TaskMate</Text>,
@@ -27,7 +27,7 @@ const App = () => {
                 </Text>
               </TouchableOpacity>
             ),
-          }}
+          })}
         />
         <Stack.Screen name="Profile" component={Profile} />
       </Stack.Navigator>
