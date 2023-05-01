@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, Text, TouchableOpacity, SafeAreaView } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Icon from "react-native-vector-icons/FontAwesome";
 
 import Profile from "./components/Profile";
 import Homepage from "./components/Homepage";
@@ -18,12 +19,12 @@ const App = () => {
           options={{
             headerStyle: { backgroundColor: "lightWhite" },
             headerShadowVisible: false,
-            headerLeft: () => (
-              <Text style={styles.headerTitle}>TaskMate</Text>
-            ),
+            headerLeft: () => <Text style={styles.headerTitle}>TaskMate</Text>,
             headerRight: () => (
               <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
-                <Text style={styles.headerButton}>Profile</Text>
+                <Text style={styles.headerButton}>
+                  <Icon name="user" size={30} color="#55BCF6" />
+                </Text>
               </TouchableOpacity>
             ),
           }}
@@ -38,7 +39,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#E8EAED",
-  }
+  },
 });
 
 export default App;
