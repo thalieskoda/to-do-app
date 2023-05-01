@@ -1,12 +1,21 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
-const Task = ({ text, completeTask }) => {
+const Task = ({ text, completeTask, date }) => {
   return (
     <View style={styles.item}>
       <View style={styles.itemLeft}>
-        <TouchableOpacity style={styles.square} onPress={completeTask}></TouchableOpacity>
+        <TouchableOpacity
+          style={styles.square}
+          onPress={completeTask}
+        ></TouchableOpacity>
+        <View>
+
         <Text style={styles.itemText}>{text}</Text>
+        <Text style={styles.date}>
+          Needs to be done by: {date.toDateString()}
+        </Text>
+        </View>
       </View>
       <View style={styles.circular}></View>
     </View>
@@ -40,6 +49,9 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderRadius: 5,
   },
+  date:{
+    fontSize:10
+  }
 });
 
 export default Task;
