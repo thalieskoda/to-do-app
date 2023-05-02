@@ -50,13 +50,8 @@ const Homepage = () => {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView
-        contentContainerStyle={{
-          flexGrow: 1,
-        }}
-        keyboardShouldPersistTaps="handled"
-      >
+    <SafeAreaView>
+      
         <View style={styles.tasksWrapper}>
           <Text style={styles.sectionTitle}>Today's tasks</Text>
           <View style={styles.items}>
@@ -73,7 +68,7 @@ const Homepage = () => {
             })}
           </View>
         </View>
-      </ScrollView>
+
 
       <KeyboardAvoidingView
         behavior={Platform.OS === "ios" ? "padding" : "height"}
@@ -87,12 +82,12 @@ const Homepage = () => {
             onChangeText={(text) => setTask(text)}
           />
           <TouchableOpacity onPress={() => setShowCalendar(true)}>
-            <View style={styles.add}>
+            <View style={styles.addDate}>
               <Text numberOfLines={2}>Specify a due date</Text>
             </View>
           </TouchableOpacity>
         </View>
-
+        
         {showCalendar && (
           <View style={styles.calendarWrapper}>
             <View style={styles.calendar}>
@@ -122,6 +117,7 @@ const Homepage = () => {
           </View>
         )}
       </KeyboardAvoidingView>
+    
     </SafeAreaView>
   );
 };
@@ -140,39 +136,37 @@ const styles = StyleSheet.create({
   },
   writeTaskWrapper: {
     position: "absolute",
-    bottom: -600,
+    bottom: -300,
     width: "100%",
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",
   },
-  inputContainer: {
-    position: "absolute",
-    bottom: 80,
-    left: 0,
-    right: 0,
-    backgroundColor: "#fff",
-    borderRadius: 20,
-    flex: 1,
-    margin: 20,
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    flexDirection: "row",
-    alignItems: "center",
-  },
+    inputContainer: {
+      backgroundColor: "#fff",
+      borderRadius: 20,
+      flex: 1,
+      margin: 20,
+      paddingVertical: 10,
+      paddingHorizontal: 20,
+      flexDirection: "row",
+      alignItems: "center",
+    },
   input: {
-    flex: 1,
-    fontSize: 16,
-    fontWeight: "bold",
-    color: "#333",
+    paddingVertical: 15,
+    paddingHorizontal: 15,
+    backgroundColor: "#FFF",
+    borderRadius: 20,
+    width: 250,
   },
-  add: {
+  addDate: {
     width: 80,
     height: 50,
     backgroundColor: "#fff",
     borderRadius: 10,
     justifyContent: "center",
     alignItems: "center",
+    
   },
   label: {
     fontSize: 18,

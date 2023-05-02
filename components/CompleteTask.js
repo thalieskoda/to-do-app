@@ -1,13 +1,13 @@
 import { Text, View } from "react-native"
 
 
-const Profile = () => {
+const CompleteTask = () => {
 
     return(
         <View>
-            <Text>Your information below</Text>
+            <Text>Complete task</Text>
         </View>
     )
 }
 
-export default Profile
+export default CompleteTask

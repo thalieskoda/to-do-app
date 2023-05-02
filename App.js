@@ -6,7 +6,7 @@ import Icon from "react-native-vector-icons/FontAwesome";
 
 import Profile from "./components/Profile";
 import Homepage from "./components/Homepage";
-
+import CompleteTask from "./components/CompleteTask";
 const Stack = createNativeStackNavigator();
 
 const App = () => {
@@ -19,7 +19,11 @@ const App = () => {
           options={({ navigation }) => ({
             headerStyle: { backgroundColor: "lightWhite" },
             headerShadowVisible: false,
-            headerLeft: () => <Text style={styles.headerTitle}>TaskMate</Text>,
+            headerLeft: () => (
+              <TouchableOpacity onPress={() => navigation.navigate("Complete Task")}>
+            <Text style={styles.headerTitle}>
+               <Icon name="check-square" size={30} color="#55BCF6" /></Text>
+               </TouchableOpacity>),
             headerRight: () => (
               <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
                 <Text style={styles.headerButton}>
@@ -30,6 +34,7 @@ const App = () => {
           })}
         />
         <Stack.Screen name="Profile" component={Profile} />
+        <Stack.Screen name="Complete Task" component={CompleteTask} />
       </Stack.Navigator>
     </NavigationContainer>
   );
