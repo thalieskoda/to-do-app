@@ -21,12 +21,12 @@ const App = () => {
             headerShadowVisible: false,
             headerLeft: () => (
               <TouchableOpacity onPress={() => navigation.navigate("Complete Task")}>
-            <Text style={styles.headerTitle}>
+            <Text>
                <Icon name="check-square" size={30} color="#55BCF6" /></Text>
                </TouchableOpacity>),
             headerRight: () => (
               <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
-                <Text style={styles.headerButton}>
+                <Text>
                   <Icon name="user" size={30} color="#55BCF6" />
                 </Text>
               </TouchableOpacity>
@@ -40,11 +40,5 @@ const App = () => {
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#E8EAED",
-  },
-});
 
 export default App;

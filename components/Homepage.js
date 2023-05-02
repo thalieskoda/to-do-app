@@ -50,8 +50,13 @@ const Homepage = () => {
   };
 
   return (
-    <SafeAreaView>
-      
+    <SafeAreaView style={styles.container}>
+      <ScrollView
+        contentContainerStyle={{
+          flexGrow: 1,
+        }}
+        keyboardShouldPersistTaps="handled"
+      >
         <View style={styles.tasksWrapper}>
           <Text style={styles.sectionTitle}>Today's tasks</Text>
           <View style={styles.items}>
@@ -68,8 +73,7 @@ const Homepage = () => {
             })}
           </View>
         </View>
-
-
+      </ScrollView>
       <KeyboardAvoidingView
         behavior={Platform.OS === "ios" ? "padding" : "height"}
         style={styles.writeTaskWrapper}
@@ -87,7 +91,7 @@ const Homepage = () => {
             </View>
           </TouchableOpacity>
         </View>
-        
+
         {showCalendar && (
           <View style={styles.calendarWrapper}>
             <View style={styles.calendar}>
@@ -117,14 +121,17 @@ const Homepage = () => {
           </View>
         )}
       </KeyboardAvoidingView>
-    
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: "#E8EAED",
+      },
   tasksWrapper: {
-    paddingTop: 30,
+    paddingTop: 80,
     paddingHorizontal: 20,
   },
   sectionTitle: {
@@ -136,22 +143,22 @@ const styles = StyleSheet.create({
   },
   writeTaskWrapper: {
     position: "absolute",
-    bottom: -300,
+    bottom: 60,
     width: "100%",
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",
   },
-    inputContainer: {
-      backgroundColor: "#fff",
-      borderRadius: 20,
-      flex: 1,
-      margin: 20,
-      paddingVertical: 10,
-      paddingHorizontal: 20,
-      flexDirection: "row",
-      alignItems: "center",
-    },
+  inputContainer: {
+    backgroundColor: "#fff",
+    borderRadius: 20,
+    flex: 1,
+    margin: 20,
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    flexDirection: "row",
+    alignItems: "center",
+  },
   input: {
     paddingVertical: 15,
     paddingHorizontal: 15,
@@ -166,7 +173,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     justifyContent: "center",
     alignItems: "center",
-    
   },
   label: {
     fontSize: 18,
